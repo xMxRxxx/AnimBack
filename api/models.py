@@ -4,8 +4,10 @@ from .helpers import *
 # Create your models here.e
 
 class njItem(models.Model):
-    backdrop_path = models.ImageField(upload_to='api/backdrop', null=True , blank=True)
-    poster_path   = models.ImageField(upload_to='api/poster', null=True , blank=True)
+    # backdrop_path = models.ImageField(upload_to='api/backdrop', null=True , blank=True)
+    # poster_path   = models.ImageField(upload_to='api/poster', null=True , blank=True)
+    backdrop_path = models.CharField(max_length=1000, null=True , blank=True)
+    poster_path   = models.CharField(max_length=1000, null=True , blank=True)
     series        = models.CharField(max_length=1000, null=True , blank=True)
     category      = ArrayField(
                     models.CharField(max_length=512, default="",null=True , blank=True), default=[""]
